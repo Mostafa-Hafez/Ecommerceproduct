@@ -1,0 +1,29 @@
+<div class="card h-100">
+    <div class="card-body text-center">
+     <div  class="card-body text-center">
+      @if (productitem().stock===0) {
+        <span  class="badge text-bg-danger">Out of stock</span>
+      }@else{
+      <span  class="badge text-bg-success">In Stock</span>
+    }
+     </div>
+      <img
+        [src]="productitem().images"
+        alt="{{productitem().title}}"
+        class="rounded-circle mb-3"
+        style="width: 200px; height: 200px;"
+      />
+      <h5  class="card-title" >{{productitem().title}}</h5>
+      <p class="card-text">
+        <strong>Name:</strong> {{ productitem().title }} <br />
+        <strong>Price:</strong> {{  productitem().price | currency:'EGP':'code'  }} <br />
+      
+      </p>
+      <div class="card-footer">
+        <button class="btn btn-success" (click)="handleRedirectToDetails()">View Product</button>
+        <button class="btn btn-warning mx-2" (click)="handleAddToCart()">Add to Cart</button>
+        <button class="btn btn-danger mx-2" (click)="handleDeleteProduct()">Delete Product</button>
+      </div>
+     
+    </div>
+  </div>

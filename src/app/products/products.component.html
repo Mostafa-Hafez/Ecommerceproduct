@@ -1,0 +1,10 @@
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @for (product of products; track product.id) 
+    {
+      <div class="col-md-4 mb-4">
+        
+       <app-product-card [productitem]="product" (sendToParent)="receivedFormChild($event)"></app-product-card>  <!--Child component-->
+      </div>  
+    }
+  </div>
+  

@@ -1,0 +1,34 @@
+
+<div class="container mt-4">
+    <div class="card">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img [src]="productitem.thumbnail" class="img-fluid rounded-start" alt="Product Image">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ productitem.title }}</h5>
+            <p class="card-text">{{ productitem.description }}</p>
+            <h6>
+              <span class="text-danger">${{ (productitem.price - (productitem.price * productitem.discountPercentage / 100)).toFixed(2) }}</span>
+              <del class="text-muted ms-2">${{ productitem.price }}</del>
+            </h6>
+            <p class="text-warning">Availability: {{ productitem.availabilityStatus }}</p>
+            
+            <table class="table table-bordered mt-3">
+              <tr><th>Brand</th><td>{{ productitem.brand }}</td></tr>
+              <tr><th>SKU</th><td>{{ productitem.sku }}</td></tr>
+              <tr><th>Weight</th><td>{{ productitem.weight }}g</td></tr>
+              <tr><th>Dimensions</th><td>{{ productitem.dimensions.width }} x {{ productitem.dimensions.height }}  cm</td></tr>
+              <tr><th>Warranty</th><td>{{ productitem.warrantyInformation }}</td></tr>
+              <tr><th>Shipping</th><td>{{ productitem.shippingInformation }}</td></tr>
+            </table>
+               <button class="btn btn-primary mt-3" style="align-items: right;" (click)="handleAddToCart()">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+  
+  </div>
+  
